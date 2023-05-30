@@ -24,23 +24,15 @@
         } else {
             //sortear um número entre 0 e 1
             var nSorteado = parseInt(Math.random() * 2);
+            alert("nSorteado: " + nSorteado);
 
             //se o número sorteado for 0, ganha quem escolher o número MENOR
-            if (nSorteado == 0) {
-                if (nJogador1 < nJogador2) {
-                    alert("Ganhou o jogador 1");
-                } else {
-                    alert("Ganhou o jogador 2");
-                }
+            if (nSorteado == 0 && nJogador1 < nJogador2 || 
+            nSorteado == 1 && nJogador1 > nJogador2) {
+                alert("Ganhou o jogador 1");
             //se o número sorteado for 1, ganha quem escolher o número MAIOR
             } else {
-                if (nSorteado == 1) {
-                    if (nJogador1 > nJogador2) {
-                        alert("Ganhou o jogador 1");
-                    } else {
-                        alert("Ganhou o jogador 2");
-                    }
-                }
+                alert("Ganhou o jogador 2");                
             }
         }        
     </script>
