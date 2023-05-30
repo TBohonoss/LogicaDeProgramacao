@@ -1,1 +1,1 @@
-## Curso de Lógica de Programção
+## Curso de Lógica de Programção com Javascript
