@@ -26,7 +26,13 @@
         function iniciarCalculo(simbolo){
             var n1 = parseFloat(document.querySelector("#output").textContent);
             var n = parseFloat(prompt("Digite outro número"));
-            var msg = calcular(simbolo, n1, n);
+            
+            try{
+                var msg = calcular(simbolo, n1, n);
+            } catch(e){
+                alert(e);
+                return;
+            }
 
             escreve(msg);
         }
@@ -37,14 +43,12 @@
         }
 
         function calcular(simbolo, n1, n) {
-            if(simbolo != '+' || simbolo != '-' || simbolo != '*' || simbolo != '/'){
-                alert("Digite um simbolo válido");
-                return false;
+            if(simbolo != '+' && simbolo != '-' && simbolo != '*' && simbolo != '/'){
+                throw new Error("Digite um simbolo válido");
             }
 
             if(isNaN(n1) || isNaN(n)){
-                alert("Chama passando somente números");
-                return false;
+                throw new Error("Chama passando somente números");
             }
 
             var numeroCalculado = null;
