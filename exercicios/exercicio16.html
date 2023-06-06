@@ -22,8 +22,7 @@
         var msg = " ";
 
         for(var i = 0; i < pessoas.length; i++){
-            msg += "<h2>Nome: "+ pessoas[i].nome +"</h2>";
-            msg += "<p>Email: "+ pessoas[i].email +"</p>";            
+            msg += pessoas[i].nome +" - "+ pessoas[i].email +"<hr>";            
         }
 
         document.querySelector("#output").innerHTML = msg;
